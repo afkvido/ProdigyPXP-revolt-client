@@ -38,5 +38,7 @@ jobs:
                       registry.stoatinternal.com/stoat/legacy-frontend:latest
                   build-args: |
                       REVOLT_PUBLIC_URL=https://api.stoat.chat/
+                      REVOLT_SAAS=https://git.stoatinternal.com/brand/assets.git
+                      REVOLT_SAAS_BRANCH=for-legacy-web
                   cache-from: type=gha
                   cache-to: type=gha,mode=max

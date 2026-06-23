@@ -8,6 +8,12 @@ COPY .env.build .env
 RUN yarn install --frozen-lockfile
 RUN yarn build:deps
 # RUN yarn typecheck # lol no
+
+ARG REVOLT_SAAS
+ARG REVOLT_SAAS_BRANCH
+ENV REVOLT_SAAS=$REVOLT_SAAS
+ENV REVOLT_SAAS_BRANCH=$REVOLT_SAAS_BRANCH
+
 RUN yarn build:highmem
 RUN yarn workspaces focus --production --all
 
