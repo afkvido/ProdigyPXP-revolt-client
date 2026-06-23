@@ -33,9 +33,8 @@ export function Audio() {
 
     const askOrGetPermission = async () => {
         try {
-            const result = await navigator.mediaDevices.getUserMedia(
-                constraints,
-            );
+            const result =
+                await navigator.mediaDevices.getUserMedia(constraints);
 
             setMediaStream(result);
         } catch (err) {
@@ -96,28 +95,14 @@ export function Audio() {
             <div className={styles.audio}>
                 <Tip palette="warning">
                     <span>
-                        We are currently{" "}
+                        Legacy voice is no longer supported,{" "}
                         <a
                             style={{ color: "inherit", fontWeight: "600" }}
-                            href="https://github.com/revoltchat/frontend/issues/14"
-                            target="_blank"
-                            rel="noreferrer">
-                            rebuilding the client
-                        </a>{" "}
-                        and{" "}
-                        <a
-                            style={{ color: "inherit", fontWeight: "600" }}
-                            href="https://trello.com/c/Ay6KdiOV/1-voice-overhaul-and-video-calling"
-                            target="_blank"
-                            rel="noreferrer">
-                            the voice server
-                        </a>{" "}
-                        from scratch.
-                        <br />
-                        <br />
-                        The old voice should work in most cases, but it may
-                        inexplicably not connect in some scenarios and / or
-                        exhibit weird behaviour.
+                            href="https://stoat.chat/app"
+                            target="_blank">
+                            use the new app
+                        </a>
+                        .
                     </span>
                 </Tip>
 

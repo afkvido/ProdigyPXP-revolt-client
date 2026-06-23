@@ -41,7 +41,9 @@ export default observer(() => {
                                     href={action.href}
                                     target="_blank"
                                     rel="noreferrer">
-                                    <div className="button">{action.text}</div>{" "}
+                                    <div className="button">
+                                        {action.text}
+                                    </div>{" "}
                                 </a>
                             ) : null,
                         )}
@@ -59,7 +61,11 @@ export default observer(() => {
                     <div className={styles.nav}>
                         <a className={styles.logo}>
                             {!("native" in window) && (
-                                <img src={wideSVG} draggable={false} />
+                                <img
+                                    src={wideSVG}
+                                    style={{ filter: "var(--logo-filter)" }}
+                                    draggable={false}
+                                />
                             )}
                         </a>
                         <LocaleSelector />

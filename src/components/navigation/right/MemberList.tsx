@@ -121,7 +121,7 @@ export default function MemberList({
                                 Offline users have temporarily been disabled for
                                 larger servers - see{" "}
                                 <a
-                                    href="https://github.com/revoltchat/backend/issues/178"
+                                    href="https://github.com/stoatchat/stoatchat/issues/178"
                                     target="_blank"
                                     rel="noreferrer">
                                     issue #178

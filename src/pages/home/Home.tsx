@@ -107,7 +107,10 @@ export default observer(() => {
                         <h3>
                             <Text id="app.special.modals.onboarding.welcome" />
                             <br />
-                            <img src={wideSVG} />
+                            <img
+                                src={wideSVG}
+                                style={{ filter: "var(--logo-filter)" }}
+                            />
                         </h3>
                         <div className={styles.actions}>
                             <a
@@ -164,18 +167,24 @@ export default observer(() => {
                                 </Link>
                             )}
 
-                            <Link to="/settings/feedback">
+                            <a
+                                href={
+                                    typeof window.native === "object"
+                                        ? "https://stoat.chat/download"
+                                        : "https://stoat.chat/app"
+                                }
+                                target="_blank">
                                 <CategoryButton
                                     action="chevron"
                                     icon={<Megaphone size={32} />}
-                                    description={
-                                        <Text id="app.home.feedback_desc" />
-                                    }>
-                                    <Text id="app.home.feedback" />
+                                    description="Revolt is now Stoat and has a brand new app.">
+                                    {typeof window.native === "object"
+                                        ? "Download new app"
+                                        : "Switch to new app"}
                                 </CategoryButton>
-                            </Link>
+                            </a>
                             <a
-                                href="https://wiki.revolt.chat/notes/project/financial-support/"
+                                href="https://ko-fi.com/stoatchat"
                                 target="_blank"
                                 rel="noreferrer">
                                 <CategoryButton

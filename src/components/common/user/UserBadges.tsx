@@ -119,7 +119,7 @@ export default function UserBadges({ badges, uid }: Props) {
                             }}
                             onClick={() => {
                                 window.open(
-                                    "https://wiki.revolt.chat/notes/project/financial-support/",
+                                    "https://ko-fi.com/stoatchat",
                                     "_blank",
                                 );
                             }}

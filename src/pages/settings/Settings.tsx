@@ -207,11 +207,6 @@ export default observer(() => {
                     icon: <Bot size={20} />,
                     title: <Text id="app.settings.pages.bots.title" />,
                 },
-                {
-                    id: "feedback",
-                    icon: <Megaphone size={20} />,
-                    title: <Text id="app.settings.pages.feedback.title" />,
-                },
             ]}
             children={
                 <Switch>
@@ -263,16 +258,23 @@ export default observer(() => {
             category="pages"
             custom={
                 <>
-                    <ButtonItem
-                        compact
-                        onClick={() =>
-                            modalController.push({ type: "changelog" })
-                        }>
-                        <ListUl size={20} />
-                        <Text id="app.special.modals.changelogs.title" />
-                    </ButtonItem>
+                    {typeof window.native === "object" ? (
+                        <a
+                            className={styles.newApp}
+                            href="https://stoat.chat/download"
+                            target="_blank">
+                            <ButtonItem compact>Download new app</ButtonItem>
+                        </a>
+                    ) : (
+                        <a
+                            className={styles.newApp}
+                            href="https://stoat.chat/app"
+                            target="_blank">
+                            <ButtonItem compact>Switch to new app</ButtonItem>
+                        </a>
+                    )}
                     <a
-                        href="https://github.com/revoltchat"
+                        href="https://github.com/stoatchat"
                         target="_blank"
                         rel="noreferrer">
                         <ButtonItem compact>
@@ -281,7 +283,7 @@ export default observer(() => {
                         </ButtonItem>
                     </a>
                     <a
-                        href="https://wiki.revolt.chat/notes/project/financial-support/"
+                        href="https://ko-fi.com/stoatchat"
                         target="_blank"
                         rel="noreferrer">
                         <ButtonItem className={styles.donate} compact>
@@ -309,7 +311,7 @@ export default observer(() => {
                             <a
                                 href={
                                     GIT_BRANCH !== "DETACHED"
-                                        ? `https://github.com/revoltchat/revite/tree/${GIT_BRANCH}`
+                                        ? `https://github.com/stoatchat/for-legacy-web/tree/${GIT_BRANCH}`
                                         : undefined
                                 }
                                 target="_blank"

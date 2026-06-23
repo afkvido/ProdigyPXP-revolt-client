@@ -78,6 +78,7 @@ export type Theme = Overrides & {
     css?: string;
     monospaceFont?: MonospaceFonts;
     "min-opacity"?: number;
+    "logo-filter"?: string;
 };
 
 export type ComputedVariables = Theme & {
@@ -288,6 +289,7 @@ export const PRESETS: Record<string, Theme> = {
         "status-busy": "#F84848",
         "status-streaming": "#977EFF",
         "status-invisible": "#A5A5A5",
+        "logo-filter": "unset",
     },
     dark: {
         accent: "#FD6671",
@@ -316,6 +318,7 @@ export const PRESETS: Record<string, Theme> = {
         "status-busy": "#F84848",
         "status-streaming": "#977EFF",
         "status-invisible": "#A5A5A5",
+        "logo-filter": "invert(1)",
     },
 };
 
